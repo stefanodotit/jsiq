@@ -2,7 +2,7 @@
   <div class="home">
     <div class="left">
       <template v-if="currentQuestion">
-        <h1 class="has-text-warning has-text-centered title is-size-1">
+        <h1 class="has-text-warning title is-size-1">
           {{ currentQuestion.question }}
           <span @click="handleClickEditBtn" class="icon is-small editIco">
             <i class="fas fa-edit"></i>
@@ -161,6 +161,7 @@ export default {
 
 .title {
   display: flex;
+  justify-content: center;
 }
 
 .emptyQuestion {

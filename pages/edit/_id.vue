@@ -76,7 +76,7 @@
             @click="handleSaveBtn"
             class="button is-success"
           >
-            Submit
+            Edit
           </a>
         </p>
         <p class="control">

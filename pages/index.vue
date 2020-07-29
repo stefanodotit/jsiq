@@ -41,9 +41,10 @@
             </h3>
             <ol type="1">
               <li
-                v-for="question of questions[category.id]"
+                v-for="(question, index) of questions[category.id]"
                 :key="category.id + question.id"
                 @click="handleClickQuestion(question)"
+                :class="handleClassQuestion(question, index)"
               >
                 {{ question.question }}
               </li>
@@ -92,6 +93,12 @@ export default {
     },
     handleClickSpoiler() {
       this.spoiled = !this.spoiled
+    },
+    handleClassQuestion(question, index) {
+      if (this.currentQuestion && question.id === this.currentQuestion.id) {
+        return 'has-text-warning'
+      }
+      return (index & 1) === 0 ? 'has-text-grey-grey' : 'has-text-grey-lighter'
     }
   }
 }
@@ -119,7 +126,7 @@ export default {
   width: 100%;
   border-right: 1px solid #ffdd57;
   overflow: auto;
-  text-align: left;
+  text-align: center;
   padding: 0 10px 10px 10px;
   display: flex;
   flex-direction: column;
@@ -133,9 +140,15 @@ export default {
 
 .content {
   overflow: auto;
+  padding: 5px;
   li {
     cursor: pointer;
     text-align: left;
+    margin-top: 10px;
+    line-height: 20px;
+    &:hover {
+      color: #ffdd57 !important;
+    }
   }
 }
 .spoilerBox {
@@ -147,6 +160,7 @@ export default {
 .body {
   flex-grow: 1;
   overflow: auto;
+  text-align: left;
   &.spoiled {
     filter: blur(10px);
   }

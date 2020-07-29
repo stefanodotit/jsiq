@@ -10,8 +10,6 @@ export const getters = {
 
 export const mutations = {
   load(store) {
-    // eslint-disable-next-line no-console
-    console.log('load cat', categories)
     store.categories = categories
   }
 }

@@ -43,10 +43,12 @@
               <li
                 v-for="(question, index) of questions[category.id]"
                 :key="category.id + question.id"
-                @click="handleClickQuestion(question)"
-                :class="handleClassQuestion(question, index)"
               >
-                {{ question.question }}
+                <nuxt-link
+                  :class="handleClassQuestion(question, index)"
+                  :to="`/question/${question.id}`"
+                  >{{ question.question }}</nuxt-link
+                >
               </li>
             </ol>
           </div>
@@ -77,8 +79,20 @@ export default {
     store.commit('categories/load')
     return store.dispatch('questions/load')
   },
+  mounted() {
+    if (!this.$route.params || !this.$route.params.id) return
+    const inputId = parseInt(this.$route.params.id)
+    for (const key of Object.keys(this.questions)) {
+      for (const question of this.questions[key]) {
+        if (question.id === inputId) {
+          this.handleSetQuestion(question)
+          return
+        }
+      }
+    }
+  },
   methods: {
-    handleClickQuestion(question) {
+    handleSetQuestion(question) {
       this.currentQuestion = question
       this.spoiled = true
       setTimeout(() => {
@@ -146,7 +160,7 @@ export default {
     text-align: left;
     margin-top: 10px;
     line-height: 20px;
-    &:hover {
+    a:hover {
       color: #ffdd57 !important;
     }
   }

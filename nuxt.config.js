@@ -1,5 +1,6 @@
 import bodyParser from 'body-parser'
 import pkg from './package'
+import * as questions from './data/questions.json'
 
 export default {
   mode: 'universal',
@@ -28,6 +29,28 @@ export default {
         crossorigin: 'anonymous'
       }
     ]
+  },
+
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'question',
+        path: '/question/:id',
+        component: resolve('pages/index.vue')
+      })
+    }
+  },
+
+  generate: {
+    routes() {
+      const routes = []
+      for (const key of Object.keys(questions.default.questions)) {
+        for (const question of questions.default.questions[key]) {
+          routes.push(`/question/${question.id}`)
+        }
+      }
+      return routes
+    }
   },
 
   /*

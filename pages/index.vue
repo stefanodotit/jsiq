@@ -98,7 +98,7 @@ export default {
       if (this.currentQuestion && question.id === this.currentQuestion.id) {
         return 'has-text-warning'
       }
-      return (index & 1) === 0 ? 'has-text-grey-grey' : 'has-text-grey-lighter'
+      return (index & 1) === 0 ? 'has-text-grey-dark' : 'has-text-grey-lighter'
     }
   }
 }

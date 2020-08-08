@@ -79,3 +79,5 @@ typings/
 
 # Service worker
 sw.*
+
+dist/*

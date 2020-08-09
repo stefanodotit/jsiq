@@ -5,11 +5,11 @@ import * as questions from './data/questions.json'
 export default {
   mode: 'universal',
   server: {
-    port: 8000, // default: 3000
-    host: '0.0.0.0' // default: localhost
+    port: 8000,
+    host: '0.0.0.0'
   },
   head: {
-    title: 'JS Interview Questions',
+    title: 'JSIQ - JavaScript Interview Questions',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -111,6 +111,15 @@ export default {
       }
     }
   },
+
+  buildModules: [
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-175044613-1'
+      }
+    ]
+  ],
 
   serverMiddleware: [
     bodyParser.json(),

@@ -20,14 +20,22 @@
             <span aria-hidden="true"></span>
           </a>
         </div>
-        <div :class="{ 'is-active': mobileOpenMenu }" class="navbar-menu">
-          <div class="navbar-end">
-            <a @click="handleClickAddBtn" class="navbar-item">
-              <span class="icon has-text-warning">
-                <i class="fas fa-plus-circle"></i>
-              </span>
-              Add</a
-            >
+        <div :class="{ 'is-active': mobileOpenMenu }" class="navbar-end">
+          <a @click="handleClickAddBtn" class="navbar-item">
+            <span class="icon has-text-warning">
+              <i class="fas fa-plus-circle"></i>
+            </span>
+            Add</a
+          >
+          <div class="navbar-item">
+            <iframe
+              src="https://ghbtns.com/github-btn.html?user=stefanodotit&repo=jsiq&type=star&size=large"
+              frameborder="0"
+              scrolling="0"
+              width="80"
+              height="30"
+              title="GitHub"
+            ></iframe>
           </div>
         </div>
       </nav>
@@ -37,6 +45,7 @@
 
 <script>
 import { IS_PROD, GITHUB_LINK } from '@/utils'
+
 export default {
   name: 'Header',
   data() {
@@ -75,7 +84,7 @@ export default {
     height: 40px;
   }
 }
-.navbar-menu {
+.navbar-end {
   flex-grow: 0;
   a {
     color: #fff;
@@ -90,7 +99,7 @@ export default {
   }
 }
 .navbar,
-.navbar-menu {
+.navbar-end {
   background: transparent;
 }
 .navbar {

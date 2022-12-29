@@ -1,0 +1,19 @@
+.menu-list a {
+  color: #cccccc;
+}
+
+.menu-list a.is-active{
+  background-color: #0e639c;
+  font-weight: bold;
+}
+
+.menu-list a:hover{
+  background-color: #37373d;
+}
+
+.menu-label {
+  color: #cccccc;
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+}

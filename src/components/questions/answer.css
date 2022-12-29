@@ -1,0 +1,7 @@
+.answerTitle, strong{
+  color: #ccc;
+}
+
+.answerTitle {
+  margin-top: 5px;
+}

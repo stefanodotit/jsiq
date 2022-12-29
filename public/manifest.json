@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "jsiq",
+  "short_name": "Javascript Interview Questions",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A list of javascript interview questions"
+}

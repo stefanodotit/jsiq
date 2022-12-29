@@ -1,0 +1,9 @@
+{
+  "functions": [
+    {
+      "path": "/*",
+      "function": "entry.netlify-edge"
+    }
+  ],
+  "version": 1
+}

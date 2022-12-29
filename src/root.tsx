@@ -9,6 +9,7 @@ import { RouterHead } from "./components/router-head/router-head";
 import bulmaStyle from "bulma/css/bulma.min.css?inline";
 import globalStyles from "./global.css?inline";
 import highlightStyle from "./highlight.css?inline";
+import { QwikPartytown } from "./components/partytown/partytown";
 
 export default component$(() => {
   /**
@@ -27,6 +28,12 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
         <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <QwikPartytown forward={['dataLayer.push']} />;
+        <script
+          async
+          type="text/partytown"
+          src="https://www.googletagmanager.com/ns.html?id=GTM-TC5NF7J"
+        />
         <RouterHead />
       </head>
       <body lang="en">

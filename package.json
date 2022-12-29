@@ -22,6 +22,7 @@
     "qwik": "qwik"
   },
   "devDependencies": {
+    "@builder.io/partytown": "^0.7.0",
     "@builder.io/qwik": "0.16.1",
     "@builder.io/qwik-city": "0.0.128",
     "@netlify/vite-plugin-netlify-edge": "1.1.1",

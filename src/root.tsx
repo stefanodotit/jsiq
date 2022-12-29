@@ -28,7 +28,7 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
         <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <QwikPartytown forward={['dataLayer.push']} />;
+        <QwikPartytown forward={['dataLayer.push']} />
         <script
           async
           type="text/partytown"

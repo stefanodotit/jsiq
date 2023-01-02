@@ -6,7 +6,7 @@
   },
   "private": true,
   "scripts": {
-    "build": "qwik build",
+    "build": "npm run partytown && qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adaptors/netlify-edge/vite.config.ts",
@@ -19,7 +19,8 @@
     "preview": "qwik build preview && vite preview --open",
     "serve": "netlify dev",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "partytown": "partytown copylib public/~partytown"
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.7.0",

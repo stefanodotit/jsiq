@@ -1,4 +1,11 @@
-import { component$, Resource, useStylesScoped$ } from "@builder.io/qwik";
+import {
+  component$,
+  createContext,
+  Resource,
+  useContextProvider,
+  useStore,
+  useStylesScoped$,
+} from "@builder.io/qwik";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import styles from "./layout.css?inline";
@@ -31,7 +38,12 @@ export const onGet: RequestHandler<Question | null> = async ({ params }) => {
   return null;
 };
 
+export const CTX = createContext("mobileMenu");
+
 export default component$(() => {
+  const mobileMenuOpened = useStore({ opened: false });
+  useContextProvider(CTX, mobileMenuOpened);
+
   const questionJson: Question[] = QuestionsJSON;
   const questionData = useEndpoint<Question>();
   useStylesScoped$(styles);
@@ -46,7 +58,11 @@ export default component$(() => {
               onRejected={() => <div>Error</div>}
               onResolved={(question) => (
                 <>
-                  <aside class="column is-3 aside">
+                  <aside
+                    class={`column is-3 aside ${
+                      mobileMenuOpened.opened ? "" : "is-hidden-mobile"
+                    }`}
+                  >
                     <QuestionsList data={questionJson} slug={question?.slug} />
                   </aside>
                   <div class="column is-9 answer">
@@ -68,7 +84,7 @@ export default component$(() => {
           </div>
         </div>
       </section>
-      <Footer></Footer>
+      <Footer />
     </main>
   );
 });

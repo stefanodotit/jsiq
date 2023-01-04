@@ -2,6 +2,10 @@ nav.navbar {
   background: rgb(0, 122, 204);
 }
 
+nav .navbar-brand{
+  align-items: center;
+}
+
 .navbar-brand>a.navbar-item:hover{
   background-color: transparent;
 }

@@ -18,6 +18,10 @@ section {
   overflow-y: scroll;
 }
 
+.answer {
+  height: 100%;
+}
+
 .boxPlaceholder {
   display: flex;
   align-items: center;

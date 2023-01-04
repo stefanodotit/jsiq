@@ -22,5 +22,8 @@ export default component$((props: { answer: string; question: string }) => {
 export const head: DocumentHead<Question> = ({data}) => {
   return {
     title: `Javascript Interview Question - ${data.question}`,
+    meta: [
+      {name: 'description', content: data.answer.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 150)}
+    ]
   };
 };

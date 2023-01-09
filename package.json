@@ -6,7 +6,7 @@
   },
   "private": true,
   "scripts": {
-    "build": "npm run partytown && qwik build",
+    "build": "npm run partytown && qwik build && cp public/sitemap.xml dist/sitemap.xml",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adaptors/netlify-edge/vite.config.ts",

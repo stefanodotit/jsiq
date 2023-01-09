@@ -1,0 +1,3 @@
+Sitemap: https://jsiq.dev/sitemap.xml
+User-agent: *
+Disallow: 
